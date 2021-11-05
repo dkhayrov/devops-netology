@@ -36,11 +36,21 @@ dd01a35078f040ca984cdd349f18d0b67e486c35 Update CHANGELOG.md
 commit 8c928e83589d90a031f811fae52a81be7153e82f
 
 
-6. git log -S 'globalPluginDirs' --oneline
+6. git grep 'globalPluginDirs'
 
-35a058fb3 main: configure credentials from the CLI config file
-c0b176109 prevent log output during init
-8364383c3 Push plugin discovery down into command package
+commands.go:            GlobalPluginDirs: globalPluginDirs(),
+commands.go:    helperPlugins := pluginDiscovery.FindPlugins("credentials", globalPluginDirs())
+internal/command/cliconfig/config_unix.go:              // FIXME: homeDir gets called from globalPluginDirs during init, before
+plugins.go:// globalPluginDirs returns directories that should be searched for
+plugins.go:func globalPluginDirs() []string {
+
+git log -L :globalPluginDirs:plugins.go
+
+78b122055, Remove config.go and update things using its aliases
+52dbf9483, keep .terraform.d/plugins for discovery
+41ab0aef7, Add missing OS_ARCH dir to global plugin paths
+66ebff90c, move some more plugin search path logic to command
+8364383c3, Push plugin discovery down into command package
 
 
 7. git log -S 'func synchronizedWriters(' --pretty=format:"%h, %an, %ad, %s"
