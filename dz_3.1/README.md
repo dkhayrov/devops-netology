@@ -16,15 +16,25 @@
 11. `[[ -d /tmp ]]` конструкция проверяет существование директории `/tmp`
 
 12. `mkdir /tmp/new_path_directory`
+    
     `cd bin/bash`
+    
     `cp bash /tmp/new_path_directory/`
+    
     `cp bash /usr/local/bin/`
+    
     `cd /`
+    
     `PATH=/tmp/new_path_directory:/usr/local/sbin:/usr/local/bin:/usr/sbin:/sbin:/bin:/usr/bin:/usr/games:/usr/local/games:/snap/bin`
+    
     `vagrant@vagrant:/$ type -a bash`
+    
     `bash is /tmp/new_path_directory/bash`
+    
     `bash is /usr/local/bin/bash`
+    
     `bash is /bin/bash`
+    
     `bash is /usr/bin/bash`
 
 13. `batch` отличается от `at` тем, что планировщик выполняет задачу при определенном уровне загрузке системы в то время как `at` выполняется в определенное время и только один раз.
