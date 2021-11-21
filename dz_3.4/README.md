@@ -25,7 +25,7 @@
 
 Прописан конфигруационный файл:
 
-```bash	
+```	
 	vagrant@vagrant:/etc/systemd/system$ cat /etc/systemd/system/node_exporter.service
 	[Unit]
 	Description=Node Exporter
